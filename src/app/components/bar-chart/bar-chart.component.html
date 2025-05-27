@@ -1,0 +1,12 @@
+@if(barChartLabels() && barChartDatasets()) {
+<canvas
+  baseChart
+  [type]="'bar'"
+  [datasets]="barChartDatasets()"
+  [labels]="barChartLabels()"
+  [options]="barChartOptions"
+  [plugins]="barChartPlugins"
+  [legend]="false"
+>
+</canvas>
+}

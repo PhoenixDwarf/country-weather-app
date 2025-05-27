@@ -1,10 +1,4 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  signal,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, Input, OnChanges, signal } from '@angular/core';
 import { ChartDataset, ChartOptions, Plugin } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { constants } from '../../constants/constants';
@@ -55,7 +49,7 @@ export class PieChartComponent implements OnChanges {
   public pieChartDatasets = signal<ChartDataset<'pie', number[]>[]>([]);
   public pieChartPlugins: Plugin<'pie'>[] = [ChartDataLabels];
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges() {
     this.pieChartDatasets?.set([
       {
         data: this.data.map((region) => region.value),

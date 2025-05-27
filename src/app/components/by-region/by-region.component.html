@@ -5,7 +5,7 @@
     [ngClass]="{ 'btn-dark text-white': selectedRegion() === region }"
     (click)="selectRegion(region)"
   >
-    {{ region }}
+    {{ region === "Antarctic" ? "Antártida" : region }}
   </button>
   }
 </article>

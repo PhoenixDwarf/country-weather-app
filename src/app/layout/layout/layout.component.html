@@ -26,7 +26,7 @@
       <h1 class="h2 fw-bold text-capitalize custom-h-color">Gráfica</h1>
       <div class="row">
         <div class="col-6">
-          <h2 class="h5">Distribución de la Población por Región</h2>
+          <h2 class="h5">Distribución de la población por región</h2>
           @if(pieChartRegions().length ) {
           <app-pie-chart [data]="pieChartRegions()" />
           } @else {
@@ -47,7 +47,7 @@
               formControlName="selectedRegions"
               selectedItemsLabel="{0} regiones seleccionadas"
             />
-            <img src="images/trees.svg" alt="asdas" class="w-100 pt-5" />
+            <img src="images/trees.svg" alt="trees" class="w-100 pt-5" />
           </form>
         </div>
       </div>
@@ -58,14 +58,20 @@
 
   <section class="p-5">
     <h1 class="h2 fw-bold text-capitalize custom-h-color">Tabla</h1>
-    <h2 class="h5 mb-5">Información general de cada país por región</h2>
-    <app-by-region-page />
+    <h2 class="h5 mb-5">Información general de cada país por continente</h2>
+    <app-by-region-page (onRegionChange)="onRegionChange($event)" />
   </section>
 
   <hr class="mx-5" />
 
   <section class="p-5">
     <h1 class="h2 fw-bold text-capitalize custom-h-color">Gráfica</h1>
-    <h2 class="h5 mb-5">Idiomas principales mas hablados por region</h2>
+    <h2 class="h5 mb-5">Idiomas mas hablados por continente</h2>
+
+    @if(barChartLanguages()) {
+    <app-bar-chart [data]="barChartLanguages()" />
+    } @else {
+    <app-data-warning height="520px" />
+    }
   </section>
 </main>

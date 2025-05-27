@@ -88,3 +88,7 @@ body .container {
 .btn-dark {
   background-color: var(--color-primary-900) !important;
 }
+
+.h-200px {
+  height: 200px !important;
+}
