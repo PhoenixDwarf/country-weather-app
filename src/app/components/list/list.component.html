@@ -1,0 +1,30 @@
+<p-table
+  [value]="countries()"
+  [tableStyle]="{ 'min-width': '50rem' }"
+  scrollHeight="500px"
+>
+  <ng-template #header>
+    <tr class="position-sticky top-0">
+      <th>Código</th>
+      <th>Bandera</th>
+      <th>Nombre</th>
+      <th>Capital</th>
+      <th>Población</th>
+    </tr>
+  </ng-template>
+  <ng-template #body let-country>
+    <tr>
+      <td>{{ country.flag }}</td>
+      <td>
+        <img [src]="country.flagSvg" [alt]="country.name" width="40" />
+      </td>
+      <td>{{ country.name }}</td>
+      <td>{{ country.capital }}</td>
+      <td>
+        <span class="badge custom-bg-primary">
+          {{ country.population | number }}
+        </span>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

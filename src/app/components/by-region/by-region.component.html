@@ -1,0 +1,18 @@
+<article class="d-flex gap-2 flex-wrap mb-4 justify-content-center">
+  @for(region of regions; track region) {
+  <button
+    class="btn btn-outline-dark"
+    [ngClass]="{ 'btn-dark text-white': selectedRegion() === region }"
+    (click)="selectRegion(region)"
+  >
+    {{ region }}
+  </button>
+  }
+</article>
+
+<country-list
+  [countries]="regionResource.value() ?? []"
+  [errorMessage]="regionResource.error()"
+  [isEmpty]="regionResource.value()?.length === 0"
+  [isLoading]="regionResource.isLoading()"
+/>

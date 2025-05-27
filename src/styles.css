@@ -1,1 +1,90 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --color-primary-50: #f4f8e7;
+  --color-primary-100: #e2eec2;
+  --color-primary-200: #cfe39b;
+  --color-primary-300: #bbd871;
+  --color-primary-400: #abcf4f;
+  --color-primary-500: #9bc729;
+  --color-primary-600: #8bb721;
+  --color-primary-700: #75a315;
+  --color-primary-800: #608f08;
+  --color-primary-900: #3a6e00;
+}
+
+body {
+  background-color: #eff0f4 !important;
+  color: #788072 !important;
+}
+
+body .container,
+body .card {
+  background-color: #f6f6f6;
+}
+
+body p,
+body .container p {
+  background-color: transparent;
+}
+
+body h1 {
+  font-size: 4rem;
+}
+
+.custom-bg-primary {
+  background-color: var(--color-primary-400) !important;
+}
+
+.custom-color-primary {
+  color: var(--color-primary-400) !important;
+}
+
+body hr {
+  border-color: var(--color-primary-400) !important;
+  border-width: 4px;
+  opacity: 0.8;
+}
+
+body .container {
+  max-width: 1200px;
+}
+
+.custom-h-color {
+  color: #2f3c27 !important;
+}
+
+.p-datatable-table-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  border-radius: 10px;
+  background: #eff0f4;
+}
+
+.p-datatable-table-container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--color-primary-600);
+}
+
+.p-datatable-table-container::-webkit-scrollbar-thumb:hover {
+  border-radius: 10px;
+  background: var(--color-primary-800);
+}
+
+.p-datatable.p-component {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.btn-outline-dark {
+  border-color: var(--color-primary-700) !important;
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--color-primary-700) !important;
+  color: #fff !important;
+}
+
+.btn-dark {
+  background-color: var(--color-primary-900) !important;
+}

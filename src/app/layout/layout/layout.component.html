@@ -1,1 +1,71 @@
-<p>layout works!</p>
+<main class="rounded-2 h-100">
+  <section class="p-5">
+    <div class="p-2 border-0 rounded-2 col-12">
+      <div class="row">
+        <div class="col-9">
+          <h1 class="fw-bold text-capitalize custom-h-color">
+            Informe detallado:<br />
+            perfil de países y <br />
+            condiciones climáticas<br />
+          </h1>
+        </div>
+        <div class="col-3 custom-bg-primary align-items-center d-flex">
+          <p class="p-4 fw-semibold fs-5 custom-h-color">
+            Documento interactivo que muestra diferentes gráficas sobre el clima
+            e información relevante de los países seleccionados.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="mx-5" />
+
+  <section class="p-5">
+    <div class="p-2 border-0 rounded-2 col-12">
+      <h1 class="h2 fw-bold text-capitalize custom-h-color">Gráfica</h1>
+      <div class="row">
+        <div class="col-6">
+          <h2 class="h5">Distribución de la Población por Región</h2>
+          @if(pieChartRegions().length ) {
+          <app-pie-chart [data]="pieChartRegions()" />
+          } @else {
+          <app-data-warning height="520px" />
+          }
+        </div>
+        <div class="col-6 p-5">
+          <form [formGroup]="pieFormGroup">
+            <p>
+              Selecciona las regiones para mostrar su distribución en la
+              grafica.
+            </p>
+            <p-multiselect
+              [options]="regionDrodownValues"
+              optionLabel="name"
+              placeholder="Selecciona regiones"
+              styleClass="w-100"
+              formControlName="selectedRegions"
+              selectedItemsLabel="{0} regiones seleccionadas"
+            />
+            <img src="images/trees.svg" alt="asdas" class="w-100 pt-5" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="mx-5" />
+
+  <section class="p-5">
+    <h1 class="h2 fw-bold text-capitalize custom-h-color">Tabla</h1>
+    <h2 class="h5 mb-5">Información general de cada país por región</h2>
+    <app-by-region-page />
+  </section>
+
+  <hr class="mx-5" />
+
+  <section class="p-5">
+    <h1 class="h2 fw-bold text-capitalize custom-h-color">Gráfica</h1>
+    <h2 class="h5 mb-5">Idiomas principales mas hablados por region</h2>
+  </section>
+</main>

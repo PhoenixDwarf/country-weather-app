@@ -1,0 +1,12 @@
+@if(pieChartLabels() && pieChartDatasets()) {
+<canvas
+  baseChart
+  [type]="'pie'"
+  [datasets]="pieChartDatasets()"
+  [labels]="pieChartLabels()"
+  [options]="pieChartOptions"
+  [plugins]="pieChartPlugins"
+  [legend]="true"
+>
+</canvas>
+}
